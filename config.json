@@ -1,1 +1,4 @@
-
+{
+    "tg_bot_token": "Your Telegram bot token here",
+    "log_file": "Log file"
+}
