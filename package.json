@@ -1,7 +1,7 @@
 {
-  "name": "sticker_time_bot",
+  "name": "BuptPowerOffDate_bot",
   "version": "1.0.0",
-  "description": "Sticker Time Bot for Telegram",
+  "description": "Sticker Power Off Remind Bot for Telegram",
   "main": "index.js",
   "scripts": {
     "start": "node .",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imxieyi/sticker_time_bot.git"
+    "url": "git+https://github.com/t3ls/BuptPowerOffDate_bot.git"
   },
   "keywords": [
     "sticker",
@@ -17,12 +17,12 @@
     "bot",
     "telegram"
   ],
-  "author": "imxieyi",
+  "author": "t3ls",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imxieyi/sticker_time_bot/issues"
+    "url": "https://github.com/t3ls/BuptPowerOffDate_bot/issues"
   },
-  "homepage": "https://github.com/imxieyi/sticker_time_bot#readme",
+  "homepage": "https://github.com/t3ls/BuptPowerOffDate_bot#readme",
   "dependencies": {
     "cron": "^1.4.1",
     "moment": "^2.22.2",
