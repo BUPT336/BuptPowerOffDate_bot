@@ -1,8 +1,8 @@
-# Sticker Time Bot
-Telegram Link: [http://t.me/sticker_time_bot](http://t.me/sticker_time_bot)
+# BuptPowerOffDate_bot（forked from https://github.com/imxieyi/sticker_time_bot）
+Telegram Link: [http://t.me/BuptPowerOffDate_bot](http://t.me/BuptPowerOffDate_bot)
 
 ## Introduction
-This is a [Telegram](https://telegram.org/) bot sending a sticker telling time every hour. You can start or stop any time using commands.
+This is a [Telegram](https://telegram.org/) bot sending a sticker telling power off or not. You can start or stop any time using commands.
 
 ## Commands
 **Start sending stickers:** `/start`
