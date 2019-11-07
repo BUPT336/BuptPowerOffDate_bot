@@ -1,5 +1,7 @@
-# BuptPowerOffDate_bot（forked from https://github.com/imxieyi/sticker_time_bot）
+# BuptPowerOffDate_bot
 Telegram Link: [http://t.me/BuptPowerOffDate_bot](http://t.me/BuptPowerOffDate_bot)
+
+forked from https://github.com/imxieyi/sticker_time_bot
 
 ## Introduction
 This is a [Telegram](https://telegram.org/) bot sending a sticker telling power off or not. You can start or stop any time using commands.
