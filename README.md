@@ -30,7 +30,7 @@ npm install
 ```
 
 ## Configuration
-Create a file config.json:
+Edit config.json:
 ```json
 {
     "tg_bot_token": "Your Telegram bot token here",
