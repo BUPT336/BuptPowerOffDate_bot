@@ -244,7 +244,7 @@ bot.on('webhook_error', (error) => {
     logger.error('[webhook_error] ' + error.code);  // => 'EPARSE'
 });
 
-var cron = new CronJob('0 * * * *', function() {
+var cron = new CronJob('0 21 * * *', function() {
     var date = new Date();
 	var powerOff = DateMinus('2019-11-06') % 3;
 	var sticker = stickers[0];
