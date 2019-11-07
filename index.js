@@ -21,18 +21,8 @@ const logger = createLogger({
 const token = config.tg_bot_token;
 
 const stickers = [
-    'CAADBQAD8wADDxXNGeYW5EDuT_6aAg',
-    'CAADBQAD9AADDxXNGcJK3qzks8qLAg',
-    'CAADBQAD9QADDxXNGZ6Uniz2IyF3Ag',
-    'CAADBQAD9gADDxXNGRLp93L7_gSLAg',
-    'CAADBQAD9wADDxXNGRU9qwR8J2NjAg',
-    'CAADBQAD-AADDxXNGYQQoarLCyyeAg',
-    'CAADBQAD-QADDxXNGe5M6q3FOIs_Ag',
-    'CAADBQAD-gADDxXNGYlJ7FZM6M4rAg',
-    'CAADBQAD-wADDxXNGe8aqxEu9OCLAg',
-    'CAADBQAD_AADDxXNGSb44I6FN-UzAg',
-    'CAADBQAD_QADDxXNGYGYV17DXBbkAg',
-    'CAADBQAD_gADDxXNGWuj_Z6psGN4Ag'
+    'CAADBQADAQAD29H8Of92Pq-X6gRIFgQ',
+    'CAADBQADAgAD29H8Ofp-Q48XLKV8FgQ'
 ];
 
 const bot = new TelegramBot(token, { polling: true });
@@ -153,48 +143,48 @@ bot.onText(/^\/autodelete(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
     }
 });
 
-bot.onText(/^\/sleeptime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
-    const chatId = msg.chat.id;
-    // bot.sendMessage(chatId, match[0]+'  '+match[1]+'  '+match[2]+'  '+match[3])
-    if (match[3]) {
-        var num = parseInt(match[3], 10);
-        if (num <= 23 && num >= 0){
-            logger.info(chatId + ' set sleeptime to '+ num +':00');
-            bot.sendMessage(chatId, 'Set sleeptime to '+ num +':00');
-            data.sleeptime[chatId] = num;
-            saveData();
-        } else {
-            bot.sendMessage(chatId, match[3]+' is a invalid time, 0-23 expected');
-        }
-    } else {
-        if (chatId in data.sleeptime) {
-            bot.sendMessage(chatId, "Current sleep time: " + data.sleeptime[chatId]);
-        } else {
-            bot.sendMessage(chatId, "Sleep time not set");
-        }
-    }
-});
+// bot.onText(/^\/sleeptime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+//     const chatId = msg.chat.id;
+//     // bot.sendMessage(chatId, match[0]+'  '+match[1]+'  '+match[2]+'  '+match[3])
+//     if (match[3]) {
+//         var num = parseInt(match[3], 10);
+//         if (num <= 23 && num >= 0){
+//             logger.info(chatId + ' set sleeptime to '+ num +':00');
+//             bot.sendMessage(chatId, 'Set sleeptime to '+ num +':00');
+//             data.sleeptime[chatId] = num;
+//             saveData();
+//         } else {
+//             bot.sendMessage(chatId, match[3]+' is a invalid time, 0-23 expected');
+//         }
+//     } else {
+//         if (chatId in data.sleeptime) {
+//             bot.sendMessage(chatId, "Current sleep time: " + data.sleeptime[chatId]);
+//         } else {
+//             bot.sendMessage(chatId, "Sleep time not set");
+//         }
+//     }
+// });
 
-bot.onText(/^\/waketime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
-    const chatId = msg.chat.id;
-    if (match[3]) {
-        var num = parseInt(match[3], 10);
-        if (num <= 23 && num >= 0){
-            logger.info(chatId + ' set waketime to '+ num +':00');
-            bot.sendMessage(chatId, 'Set waketime to '+ num +':00');
-            data.waketime[chatId] = num;
-            saveData();
-        } else {
-            bot.sendMessage(chatId, match[3]+' is a invalid time, 0-23 expected');
-        }
-    } else {
-        if (chatId in data.waketime) {
-            bot.sendMessage(chatId, "Current wake time: " + data.waketime[chatId]);
-        } else {
-            bot.sendMessage(chatId, "Wake time not set");
-        }
-    }
-});
+// bot.onText(/^\/waketime(@sticker_time_bot)?(\s+([^\s]+))?$/, (msg, match) => {
+//     const chatId = msg.chat.id;
+//     if (match[3]) {
+//         var num = parseInt(match[3], 10);
+//         if (num <= 23 && num >= 0){
+//             logger.info(chatId + ' set waketime to '+ num +':00');
+//             bot.sendMessage(chatId, 'Set waketime to '+ num +':00');
+//             data.waketime[chatId] = num;
+//             saveData();
+//         } else {
+//             bot.sendMessage(chatId, match[3]+' is a invalid time, 0-23 expected');
+//         }
+//     } else {
+//         if (chatId in data.waketime) {
+//             bot.sendMessage(chatId, "Current wake time: " + data.waketime[chatId]);
+//         } else {
+//             bot.sendMessage(chatId, "Wake time not set");
+//         }
+//     }
+// });
 
 
 bot.onText(/\/stop/, (msg) => {
@@ -235,16 +225,16 @@ var cron = new CronJob('0 * * * *', function() {
         }
         let hour = moment().tz(tz).hours();
 
-        if (id in data.sleeptime && id in data.waketime) {
-            let sleep = data.sleeptime[id];
-            let wake = data.waketime[id];
-            if (sleep < wake) {
-                if (hour > sleep && hour < wake) return;
-            }
-            if (sleep > wake) {
-                if (hour > sleep || hour < wake) return;
-            }
-        }
+//         if (id in data.sleeptime && id in data.waketime) {
+//             let sleep = data.sleeptime[id];
+//             let wake = data.waketime[id];
+//             if (sleep < wake) {
+//                 if (hour > sleep && hour < wake) return;
+//             }
+//             if (sleep > wake) {
+//                 if (hour > sleep || hour < wake) return;
+//             }
+//         }
         logger.debug('Send to ' + id);
         bot.sendSticker(id, stickers[hour % 12]).then(message => {
             let cid = message.chat.id;
